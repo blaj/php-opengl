@@ -1,0 +1,7 @@
+ARG_ENABLE('opengl', 'opengl support', 'no');
+
+if (PHP_OPENGL != 'no') {
+	AC_DEFINE('HAVE_OPENGL', 1, 'opengl support enabled');
+
+	EXTENSION('opengl', 'opengl.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
